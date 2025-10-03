@@ -4,7 +4,6 @@ services:
     env: docker
     plan: free
     dockerfilePath: ./Dockerfile
-    startCommand: python app.py
     envVars:
       - key: API_TOKEN
         value: "1234567890:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi"
