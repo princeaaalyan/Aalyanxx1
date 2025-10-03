@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: youtube-downloader-bot
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt && apt-get update && apt-get install -y ffmpeg
+    startCommand: python prince.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: PYTHONUNBUFFERED
+        value: 1
