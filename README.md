@@ -11,12 +11,19 @@ A powerful Telegram bot that can download YouTube videos, shorts, audio (MP3), a
 - 🗂️ Automatic file cleanup after sending
 - 📊 Real-time download progress updates
 
-## Deploy to Railway
+## Deploy to Cloud Platforms
 
-### Method 1: One-Click Deploy
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/your-template-id)
+### 🚀 One-Click Deploy
 
-### Method 2: Manual Deploy
+#### Deploy to Railway
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template)
+
+#### Deploy to Render
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
+
+### 📋 Manual Deploy Options
+
+#### Railway Deployment
 
 1. **Fork this repository** or **create a new Railway project**
 
@@ -32,6 +39,23 @@ A powerful Telegram bot that can download YouTube videos, shorts, audio (MP3), a
    - Install dependencies from `requirements.txt`
    - Install FFmpeg (required for audio processing)
    - Start your bot using the `Procfile`
+
+#### Render Deployment
+
+1. **Fork this repository** or **create a new Render project**
+
+2. **Connect your GitHub repository** to Render
+
+3. **Set Environment Variables** in Render dashboard:
+   ```
+   API_TOKEN=your_telegram_bot_token
+   OWNER_USERNAME=your_telegram_username
+   ```
+
+4. **Deploy** - Render will automatically:
+   - Use Dockerfile for consistent builds
+   - Install FFmpeg via Docker
+   - Start your bot using `app.py` wrapper
 
 ### Getting Your Bot Token
 
@@ -53,11 +77,18 @@ A powerful Telegram bot that can download YouTube videos, shorts, audio (MP3), a
    python prince.py
    ```
 
-## Railway Configuration Files
+## Configuration Files
 
+### Railway Files
 - `requirements.txt` - Python dependencies
 - `Procfile` - Tells Railway how to start the app
 - `railway.toml` - Railway-specific configuration
+- `nixpacks.toml` - Railway build configuration
+
+### Render Files
+- `app.py` - Render-compatible wrapper
+- `Dockerfile` - Docker configuration for Render
+- `render.yaml` - Render service configuration
 - `env.example` - Environment variables template
 
 ## Usage
@@ -73,9 +104,10 @@ A powerful Telegram bot that can download YouTube videos, shorts, audio (MP3), a
 ## Important Notes
 
 - The bot automatically deletes downloaded files after sending them to save storage space
-- Railway's free tier has limitations - monitor your usage
+- **Railway Free Tier:** $5 credit/month, apps sleep after 30min inactivity
+- **Render Free Tier:** 750 hours/month, apps sleep after 15min inactivity
 - Large files may take time to download and upload
-- FFmpeg is automatically installed on Railway for audio processing
+- FFmpeg is automatically installed on both platforms for audio processing
 
 ## Dependencies
 
