@@ -1,12 +1,26 @@
 services:
   - type: web
     name: youtube-downloader-bot
-    env: python
+    env: docker
     plan: free
-    buildCommand: pip install -r requirements.txt && apt-get update && apt-get install -y ffmpeg
-    startCommand: python prince.py
+    dockerfilePath: ./Dockerfile
+    startCommand: python app.py
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.0
       - key: PYTHONUNBUFFERED
         value: 1
+      - key: API_TOKEN
+        value: "1234567890:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi"
+      - key: OWNER_USERNAME
+        value: "AutoUser"
+      - key: BOT_NAME
+        value: "YouTube Downloader Bot"
+      - key: BOT_DESCRIPTION
+        value: "Download YouTube videos, audio, and playlists"
+      - key: MAX_FILE_SIZE
+        value: "50MB"
+      - key: SUPPORTED_FORMATS
+        value: "mp4,mp3,webm"
+      - key: AUTO_GENERATED
+        value: "true"

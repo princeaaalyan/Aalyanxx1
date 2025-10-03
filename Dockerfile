@@ -27,4 +27,4 @@ ENV PYTHONUNBUFFERED=1
 EXPOSE 10000
 
 # Start the bot
-CMD ["python", "prince.py"]
+CMD ["python", "app.py"]
