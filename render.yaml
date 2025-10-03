@@ -6,14 +6,12 @@ services:
     dockerfilePath: ./Dockerfile
     startCommand: python app.py
     envVars:
-      - key: PYTHON_VERSION
-        value: 3.11.0
-      - key: PYTHONUNBUFFERED
-        value: 1
       - key: API_TOKEN
         value: "1234567890:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi"
       - key: OWNER_USERNAME
         value: "AutoUser"
+      - key: PYTHONUNBUFFERED
+        value: "1"
       - key: BOT_NAME
         value: "YouTube Downloader Bot"
       - key: BOT_DESCRIPTION
